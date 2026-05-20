@@ -26,6 +26,34 @@ Sinais discretos são sequências numéricas obtidas por amostragem de fenômeno
 * **Estável (BIBO):** Para garantir que o sinal não divirja, preservando a integridade do processamento e do hardware.
 * **Causal:** Propriedade obrigatória para implementação em tempo real (como no ESP32), pois o sistema não pode depender de valores futuros do sensor para calcular a saída atual.
 
+---
+
+## Parte 3 – Análise no Domínio da Frequência
+
+### 📋 Descrição da Etapa
+Esta etapa teve como objetivo introduzir os fundamentos da análise espectral de sinais discretos. O foco principal foi compreender como a informação de um sinal pode ser representada e interpretada no domínio da frequência, permitindo identificar componentes e padrões que não são visíveis no domínio do tempo.
+
+### 🧠 Resumo Teórico
+A análise de frequência permite entender como a energia de um sinal está distribuída entre diferentes componentes espectrais:
+* **DTFT e DFT:** Enquanto a DTFT é uma função contínua da frequência, a DFT é a sua versão amostrada, essencial para o processamento numérico em computadores.
+* **Algoritmo FFT:** Uma implementação matematicamente otimizada da DFT que reduz drasticamente o custo computacional, tornando viável o processamento em tempo real em sistemas embarcados.
+* **Transformada-Z:** Estende a análise para o plano complexo, sendo a ferramenta fundamental para investigar a estabilidade de sistemas digitais através da localização de polos e zeros.
+* **Fenómenos de Análise:** O estudo abordou o **Aliasing** (distorção por taxa de amostragem insuficiente) e o **Janelamento**, técnica utilizada para reduzir o vazamento espectral em sinais de duração finita.
+
+### 💻 Atividades Desenvolvidas
+1. **Resumo Técnico:** Elaboração de síntese teórica sobre transformadas (DFT/FFT/Z) e fenómenos espectrais baseada em Oppenheim e Proakis.
+2. **Simulação Computacional:** Implementação em Octave de scripts para geração de senoides, soma de sinais, análise de aliasing e aplicação de janelas de Hamming.
+3. **Análise de Estabilidade:** Determinação numérica da resposta ao impulso de sistemas discretos e análise de convergência no plano-z.
+4. **Processamento de Sinais Reais:** Aplicação da FFT em sinais simulados de vibração para identificação de harmónicas e diagnóstico de falhas.
+
+### 🎯 Resposta ao Problema Norteador
+**Pergunta:** Como identificar, a partir do conteúdo espectral de um sinal real, informações relevantes sobre o comportamento dinâmico de um sistema físico e quais limitações práticas devem ser consideradas durante a aquisição e análise desses dados?
+
+**Resposta:** A identificação é feita através da localização e magnitude dos picos no espectro de frequência (via FFT), que revelam frequências fundamentais e harmónicas associadas a fenómenos físicos, como a rotação de um motor ou vibrações estruturais. As principais limitações práticas incluem:
+* **Resolução Espectral:** É limitada pelo número de amostras (N); quanto menor o tempo de aquisição, menos definidos são os picos espectrais.
+* **Aliasing:** Se a taxa de amostragem for inferior ao limite de Nyquist, as informações de alta frequência serão "dobradas" para frequências baixas, corrompendo os dados.
+* **Vazamento Espectral:** O truncamento de sinais reais introduz componentes espúrias, exigindo o uso de janelamento (como Hamming) para suavizar as transições e aumentar a fidelidade do espectro.
+
 ## 📂 Organização do Repositório
 * `/teoria`: Resumo teórico fundamentado e definições matemáticas.
 * `/simulacoes`: Códigos das simulações devidamente comentados.
