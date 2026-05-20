@@ -8,7 +8,7 @@ Nesta etapa, realizei a análise espectral de sinais discretos utilizando o soft
 ## Questão 1: FFT de uma Senoide
 **Objetivo:** Gerar uma senoide de $f_0=0,1$ e observar o seu espectro.
 
-![Gráfico Questão 1](resultados/parte_3/q01_espectro_senoide.png)
+![Gráfico Questão 1](resultados/parte_3/q01_espectro.png)
 
 **Discussão Técnica:** Ao aplicar a FFT numa senoide pura, observa-se um pico nítido na frequência normalizada correspondente a $0,1$. Isto demonstra como a energia do sinal está concentrada numa única componente espectral, permitindo a sua identificação precisa no domínio da frequência.
 
