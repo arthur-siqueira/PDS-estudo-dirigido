@@ -1,4 +1,4 @@
-Parte 1 - Modelagem de Sinais e Sistemas Discretos
+# Parte 1 - Modelagem de Sinais e Sistemas Discretos
 
 ![Gráfico Analise Parte 1](grafico_sensor.png)
 
