@@ -1,3 +1,9 @@
+Parte 1 - Modelagem de Sinais e Sistemas Discretos
+
+![Gráfico Analise Parte 1](grafico_sensor.png)
+
+---
+
 # Parte 3 – Análise no Domínio da Frequência
 
 ## Descrição das Atividades
