@@ -54,6 +54,35 @@ A análise de frequência permite entender como a energia de um sinal está dist
 * **Aliasing:** Se a taxa de amostragem for inferior ao limite de Nyquist, as informações de alta frequência serão "dobradas" para frequências baixas, corrompendo os dados.
 * **Vazamento Espectral:** O truncamento de sinais reais introduz componentes espúrias, exigindo o uso de janelamento (como Hamming) para suavizar as transições e aumentar a fidelidade do espectro.
 
+
+## Parte 4 - Filtros Digitais
+
+📄 **Descrição da Etapa**
+
+Esta etapa teve como objetivo introduzir os fundamentos do projeto e análise de filtros digitais, compreendendo como sistemas discretos podem modificar seletivamente o conteúdo espectral dos sinais para atenuar ruídos ou destacar informações de interesse.
+
+🧠 **Resumo Teórico**
+
+A filtragem digital atua na modificação da resposta em frequência dos sinais, dividindo-se principalmente em duas arquiteturas:
+
+* **Filtros FIR (Finite Impulse Response):** Não possuem realimentação, garantindo estabilidade inerente e a possibilidade de fase linear exata, essenciais para preservar a forma de onda do sinal.
+* **Filtros IIR (Infinite Impulse Response):** Utilizam realimentação, alcançando maior seletividade espectral com menor ordem (menor custo computacional), mas exigem análise de estabilidade através da localização de polos.
+* **Resposta de Fase e Atraso de Grupo:** Parâmetros críticos que definem como o filtro atrasa as componentes do sinal no tempo.
+* **Aplicações Práticas:** Redução de ruído em sensores, telecomunicações e pré-processamento de sinais para sistemas embarcados.
+
+💻 **Atividades Desenvolvidas**
+
+1. **Resumo Técnico:** Elaboração de síntese conceitual sobre filtros digitais, estabilidade e fase linear.
+2. **Simulação Computacional:** Implementação em Python de scripts para a criação de filtros passa-baixa e passa-faixa, comparando as arquiteturas FIR e IIR.
+3. **Análise de Estabilidade:** Representação gráfica de polos e zeros no plano complexo para filtros IIR.
+4. **Processamento de Sinais Reais:** Aplicação de filtros digitais em sinais simulados de monitoramento agrícola para redução de ruído térmico e interferências de rede.
+
+🎯 **Resposta ao Problema Norteador**
+
+**Pergunta:** Como projetar e validar filtros digitais capazes de reduzir os ruídos presentes nos sinais sem comprometer as informações relevantes necessárias para a tomada de decisão?
+
+**Resposta:** O projeto inicia-se pela identificação das bandas de frequência do sinal de interesse e do ruído (ex: ruído de alta frequência de sensores). O filtro (FIR ou IIR) deve ser projetado com uma frequência de corte que atenue o ruído, analisando a resposta em frequência para garantir o ganho correto. A validação exige avaliar a resposta de fase e o atraso de grupo; em aplicações de controle, é vital garantir que o filtro não adicione um atraso excessivo ou distorça a forma de onda do sinal ambiental, o que prejudicaria a lógica de tomada de decisão do microcontrolador.
+
 ## 📂 Organização do Repositório
 * `/teoria`: Resumo teórico fundamentado e definições matemáticas.
 * `/simulacoes`: Códigos das simulações devidamente comentados.
